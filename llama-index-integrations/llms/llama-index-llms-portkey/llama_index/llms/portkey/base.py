@@ -2,7 +2,7 @@
 Portkey integration with Llama_index for enhanced monitoring.
 """
 
-from typing import TYPE_CHECKING, Any, Callable, List, Optional, Sequence, Union, cast
+from typing import TYPE_CHECKING, Any, Callable, List, Optional, Sequence, Union, cast, Literal
 
 from llama_index.core.base.llms.types import (
     ChatMessage,
@@ -39,6 +39,7 @@ if TYPE_CHECKING:
 
 DEFAULT_PORTKEY_MODEL = "gpt-3.5-turbo"
 
+ModesLiteral = Literal["single", "load_balance", "fallback"]
 
 class Portkey(CustomLLM):
     """Portkey LLM.
